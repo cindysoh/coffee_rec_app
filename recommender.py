@@ -12,22 +12,27 @@ country_list.insert(0, 'None')
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     header = st.container()
-    tasting_notes = st.container()
-    taste_input = st.container()
-    origin = st.container()
+    tasting_notes = st.sidebar.container()
+    taste_input = st.sidebar.container()
+    origin = st.sidebar.container()
 
     with header:
-        st.title("Coffee Recommender")
+        st.title("Coffee Bean Recommender")
+        st.subheader("Instruction")
+        st.write('''First: Type in your preferred tasting notes.
+        \nSecond: Use the slider to input your preferred taste rating for each taste category
+        \nLastly: You can select your preferred coffee bean's origin from the dropdown or None 
+        ''')
 
-    with st.form(key='my_form'):
+    with st.sidebar.form(key='my_form'):
 
         with tasting_notes:
-            st.title("Tasting Notes")
+            st.header("Tasting Notes")
             st.text("Type your preference")
             notes = st.text_input("Example: juicy, sweet, bright")
 
         with taste_input:
-            st.title("Taste Rating")
+            st.header("Taste Rating")
             aroma = st.select_slider(
                 'Aroma',
                 options=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
@@ -45,7 +50,7 @@ if __name__ == '__main__':
                 options=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 
         with origin:
-            st.title("Country Origin")
+            st.header("Country Origin")
             st.text("Optional")
             origin_input = st.selectbox('Select country of origin(optional)', country_list)
             if origin_input == 'None':
