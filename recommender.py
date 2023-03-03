@@ -19,10 +19,9 @@ if __name__ == '__main__':
     with header:
         st.title("Coffee Bean Recommender")
         st.subheader("Instruction")
-        st.write('''First: Type in your preferred tasting notes.
-        \nSecond: Use the slider to input your preferred taste rating for each taste category
-        \nLastly: You can select your preferred coffee bean's origin from the dropdown or None 
-        ''')
+        st.markdown('**First**: Type in your preferred tasting notes.')
+        st.markdown('**Second**: Use the slider to input your preferred taste rating for each taste category')
+        st.markdown("**Lastly**: You can select your preferred coffee bean's origin from the dropdown or None")
 
     with st.sidebar.form(key='my_form'):
 
@@ -51,7 +50,6 @@ if __name__ == '__main__':
 
         with origin:
             st.header("Country Origin")
-            st.text("Optional")
             origin_input = st.selectbox('Select country of origin(optional)', country_list)
             if origin_input == 'None':
                 origin_input = None
