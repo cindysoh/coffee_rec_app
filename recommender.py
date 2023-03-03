@@ -27,8 +27,7 @@ if __name__ == '__main__':
 
         with tasting_notes:
             st.header("Tasting Notes")
-            st.text("Type your preference")
-            notes = st.text_input("Example: juicy, sweet, bright")
+            notes = st.text_input("Type in your preference. E.g. juicy, sweet, bright")
 
         with taste_input:
             st.header("Taste Rating")
@@ -50,7 +49,7 @@ if __name__ == '__main__':
 
         with origin:
             st.header("Country Origin")
-            origin_input = st.selectbox('Select country of origin(optional)', country_list)
+            origin_input = st.selectbox('Select country of origin (optional)', country_list)
             if origin_input == 'None':
                 origin_input = None
 
