@@ -4,11 +4,12 @@ from sklearn.neighbors import NearestNeighbors
 from joblib import Parallel, delayed
 import spacy
 
-try:
-    nlp = spacy.load('en_core_web_lg')
-except OSError:
-    spacy.cli.download('en_core_web_lg')
-    nlp = spacy.load('en_core_web_lg')
+# try:
+#     nlp = spacy.load('en_core_web_lg')
+# except OSError:
+#     spacy.cli.download('en_core_web_lg')
+#     nlp = spacy.load('en_core_web_lg')
+nlp = spacy.load('en_core_web_lg')
 
 coffee = pd.read_csv('data/coffee_final.csv')
 
